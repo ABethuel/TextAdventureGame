@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">TextAdventureGame</string>
+    <string name="about">About</string>
+    <string name="load">Load</string>
+    <string name="play">Play</string>
+    <string name="help">Help</string>
 </resources>
