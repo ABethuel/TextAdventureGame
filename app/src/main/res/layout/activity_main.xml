@@ -4,23 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EDE5E5"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/revolution2"
+    >
 
     <Button
         android:id="@+id/buttonLoad"
         android:layout_width="118dp"
         android:layout_height="57dp"
-        android:layout_marginTop="42dp"
         android:layout_marginEnd="96dp"
         android:layout_marginRight="96dp"
         android:layout_marginBottom="36dp"
         android:text="@string/load"
         app:backgroundTint="#038CF4"
         app:layout_constraintBottom_toTopOf="@+id/buttonAbout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.504" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/buttonAbout"
@@ -36,19 +34,19 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="238dp"
+        android:layout_height="83dp"
         android:gravity="center"
         android:text="Sale e Sablia\nThe Fall of Vanoe"
         android:textAllCaps="true"
-        android:textColor="#131313"
-        android:textSize="20sp"
+        android:textColor="#FBFBFB"
+        android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.069" />
+        app:layout_constraintVertical_bias="0.046" />
 
     <Button
         android:id="@+id/buttonHelp"
@@ -68,29 +66,10 @@
         android:layout_height="57dp"
         android:layout_marginStart="96dp"
         android:layout_marginLeft="96dp"
-        android:layout_marginTop="42dp"
         android:layout_marginBottom="36dp"
         android:text="@string/play"
         app:backgroundTint="#038CF4"
         app:layout_constraintBottom_toTopOf="@+id/buttonHelp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.504" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="386dp"
-        android:layout_height="377dp"
-        android:layout_marginStart="47dp"
-        android:layout_marginLeft="47dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="47dp"
-        android:layout_marginRight="47dp"
-        android:contentDescription="@string/todo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.55"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:srcCompat="@drawable/_38_gettyimages_153414779" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
