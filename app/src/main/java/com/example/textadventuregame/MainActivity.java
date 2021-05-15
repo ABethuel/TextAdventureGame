@@ -55,6 +55,8 @@ public class MainActivity extends AppCompatActivity {
 
         // Music
         MediaPlayer ring = MediaPlayer.create(MainActivity.this, R.raw.ashesonthefire);
-        ring.setLooping(true);
+        ring.setLooping(true); // We loop the music in all activities
+        ring.start();
+
     }
 }
