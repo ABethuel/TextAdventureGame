@@ -22,7 +22,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="167f4edd-565f-448b-ae83-9e906500bff2" name="Default Changelist" comment="" />
+    <list default="true" id="167f4edd-565f-448b-ae83-9e906500bff2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,11 +67,13 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="390" y="141" key="FileChooserDialogImpl" timestamp="1621098666508">
-      <screen x="0" y="0" width="1216" height="771" />
+    <state x="616" y="190" key="FileChooserDialogImpl" timestamp="1621107670621">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="390" y="141" key="FileChooserDialogImpl/0.0.1216.771@0.0.1216.771" timestamp="1621098666508" />
+    <state x="616" y="190" key="FileChooserDialogImpl/1920.242.1536.824/0.0.1920.1040@0.0.1920.1040" timestamp="1621107670621" />
   </component>
 </project>

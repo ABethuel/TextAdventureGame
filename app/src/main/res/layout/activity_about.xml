@@ -4,8 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EDE5E5"
+    android:background="@drawable/revolution2"
     tools:context=".AboutActivity">
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="310dp"
+        android:layout_height="229dp"
+        android:layout_marginStart="137dp"
+        android:layout_marginLeft="137dp"
+        android:layout_marginTop="91dp"
+        android:layout_marginEnd="137dp"
+        android:layout_marginRight="137dp"
+        android:layout_marginBottom="254dp"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        android:text="In this adventure game, you will play as Jacko, a revolutionary who wants to
+free his city from tyranny. Unfortunately, he has found himself trapped in the Beast, a
+monstrous prison. Navigate through the rooms to the sound of a sweet melody and escape to reach
+Jacko's dream. Enjoy the game!"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/buttonAboutBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/buttonAboutBack"
@@ -24,17 +49,4 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="221dp"
-        android:layout_marginLeft="221dp"
-        android:layout_marginTop="196dp"
-        android:layout_marginEnd="221dp"
-        android:layout_marginRight="221dp"
-        android:text="About"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

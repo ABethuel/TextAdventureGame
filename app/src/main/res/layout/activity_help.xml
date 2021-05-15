@@ -4,24 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EDE5E5"
+    android:background="@drawable/revolution2"
     tools:context=".HelpActivity">
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="192dp"
-        android:layout_marginLeft="192dp"
-        android:layout_marginTop="166dp"
-        android:layout_marginEnd="191dp"
-        android:layout_marginRight="191dp"
-        android:layout_marginBottom="418dp"
-        android:text="@string/help"
+        android:layout_width="310dp"
+        android:layout_height="226dp"
+        android:layout_marginStart="137dp"
+        android:layout_marginLeft="137dp"
+        android:layout_marginTop="91dp"
+        android:layout_marginEnd="137dp"
+        android:layout_marginRight="137dp"
+        android:layout_marginBottom="254dp"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        android:text="To play this adventure game and follow Jacko's adventures, all you have to do
+is follow your instinct to navigate through the rooms. You will be lulled by a sweet melody and can
+save your progress so you can play whenever you want.  Enjoy the game!"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/buttonHelpBack"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/buttonHelpBack"

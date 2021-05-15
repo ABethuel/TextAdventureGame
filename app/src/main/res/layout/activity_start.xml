@@ -36,12 +36,22 @@
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="137dp"
-        android:layout_height="89dp"
-        android:background="#EDE5E5"
+        android:layout_width="310dp"
+        android:layout_height="226dp"
+        android:layout_marginStart="137dp"
+        android:layout_marginLeft="137dp"
+        android:layout_marginEnd="137dp"
+        android:layout_marginRight="137dp"
+        android:background="#FFFFFF"
         android:gravity="center"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="172dp"
-        tools:layout_editor_absoluteY="131dp" />
+        android:text="As the people of Vanoe are about to rise up, Jacko, the king of thieves, is
+locked up in the Beast, a huge and reputedly impregnable fortress on an island in the centre
+of the bay, towering over the city. If Jacko is to fan the flames of revolution and free his people
+, he will have to escape from his prison and face many obstacles."
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="141dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
