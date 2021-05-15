@@ -55,5 +55,6 @@ public class MainActivity extends AppCompatActivity {
 
         // Music
         MediaPlayer ring = MediaPlayer.create(MainActivity.this, R.raw.ashesonthefire);
+        ring.start();
     }
 }
