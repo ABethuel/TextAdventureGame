@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button helpButton;
     Button aboutButton;
+    Button exitButton;
     Button playButton;
     Button loadButton;
 
@@ -50,6 +51,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getBaseContext(), StartActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        exitButton = findViewById(R.id.buttonExit);
+        exitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
 
