@@ -9,6 +9,23 @@
     >
 
     <Button
+        android:id="@+id/buttonExit"
+        android:layout_width="105dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="34dp"
+        android:layout_marginRight="34dp"
+        android:layout_marginBottom="40dp"
+        android:text="@string/exit"
+        app:backgroundTint="#038CF4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonAbout"
+        app:layout_constraintStart_toEndOf="@+id/buttonHelp"
+        app:layout_constraintTop_toBottomOf="@+id/buttonLoad" />
+
+    <Button
         android:id="@+id/buttonLoad"
         android:layout_width="118dp"
         android:layout_height="57dp"
