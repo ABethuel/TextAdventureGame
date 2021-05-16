@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<dungeon title="dungeon" author="Adrien">
+    <room>
+        <east>1</east>
+        <description>Room 1 (0)</description>
+    </room>
+    <room>
+        <west>0</west>
+        <south>2</south>
+        <description>Room 2 (1)</description>
+    </room>
+    <room>
+        <north>1</north>
+        <west>3</west>
+        <east>4</east>
+        <description>Room 3 (2)</description>
+    </room>
+    <room>
+        <east>2</east>
+        <description>Room 4 (3)</description>
+    </room>
+    <room>
+        <west>2</west>
+        <north>5</north>
+        <description>Room 5 (4)</description>
+    </room>
+    <room>
+        <south>4</south>
+        <description>Room 6 (5)</description>
+    </room>
+</dungeon>
