@@ -40,8 +40,10 @@
         android:layout_height="226dp"
         android:layout_marginStart="137dp"
         android:layout_marginLeft="137dp"
+        android:layout_marginTop="141dp"
         android:layout_marginEnd="137dp"
         android:layout_marginRight="137dp"
+        android:layout_marginBottom="204dp"
         android:background="#FFFFFF"
         android:gravity="center"
         android:text="As the people of Vanoe are about to rise up, Jacko, the king of thieves, is
@@ -49,9 +51,10 @@ locked up in the Beast, a huge and reputedly impregnable fortress on an island i
 of the bay, towering over the city. If Jacko is to fan the flames of revolution and free his people
 , he will have to escape from his prison and face many obstacles."
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/buttonNext"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="141dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
