@@ -27,6 +27,26 @@
     </room>
     <room>
         <south>4</south>
+        <east>6</east>
         <description>Room 6 (5)</description>
+    </room>
+    <room>
+        <west>5</west>
+        <north>7</north>
+        <south>8</south>
+        <description>Room 7 (6)</description>
+    </room>
+    <room>
+        <south>6</south>
+        <description>Room 8 (7)</description>
+    </room>
+    <room>
+        <north>6</north>
+        <east>9</east>
+        <description>Room 9 (8)</description>
+    </room>
+    <room>
+        <west>8</west>
+        <description>Room 10 (9)</description>
     </room>
 </dungeon>
