@@ -26,7 +26,7 @@ public class StartActivity extends AppCompatActivity {
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getBaseContext(), StartActivity.class);
+                Intent intent = new Intent(getBaseContext(), PlayActivity.class);
                 startActivity(intent);
             }
         });
