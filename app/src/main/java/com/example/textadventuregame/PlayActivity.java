@@ -23,6 +23,7 @@ public class PlayActivity extends AppCompatActivity {
 
         initDungeon();
         displayRooms();
+        readXMLFile();
     } // protected void onCreate
 
     protected void initDungeon() {
