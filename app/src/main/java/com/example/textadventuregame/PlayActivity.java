@@ -110,6 +110,8 @@ public class PlayActivity extends AppCompatActivity {
                             break;
                     }
                 }
+
+                eventType = xpp.next();
             }
         }
         catch (XmlPullParserException e){
