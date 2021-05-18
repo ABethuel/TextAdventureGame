@@ -57,7 +57,7 @@ public class PlayActivity extends AppCompatActivity {
         txtPlayerInventory = findViewById(R.id.txtViewPlayerInventory);
 
         // Setup button (navigation, updating...)
-        northButton = findViewById(R.id.buttonNorth);
+        northButton = findViewById(R.id.btnNorth);
         northButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
