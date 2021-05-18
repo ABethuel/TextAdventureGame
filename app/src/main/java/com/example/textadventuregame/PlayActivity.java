@@ -23,7 +23,9 @@ public class PlayActivity extends AppCompatActivity {
 
         initDungeon();
         displayRooms();
+
         readXMLFile();
+        displayRooms();
     } // protected void onCreate
 
     protected void initDungeon() {
@@ -60,7 +62,7 @@ public class PlayActivity extends AppCompatActivity {
 
             while (eventType != XmlPullParser.END_DOCUMENT)
             {
-                if (eventType == XmlPullParser.START_TAG){
+                if (eventType == XmlPullParser.START_TAG){      //start to read xml file
                     String elemName = xpp.getName();
                     if (elemName.equals("dungeon")){ // We get the attributes of the XML file (Author and title)
                         String titleAttr = xpp.getAttributeValue(null, "title");
@@ -85,7 +87,8 @@ public class PlayActivity extends AppCompatActivity {
                         elemText = "description";
                     }
                 }
-                // We will add code there to read code
+                // We will add code there to read rooms
+
                 else if (eventType == XmlPullParser.TEXT){
                     switch (elemText) {
                         case "north":

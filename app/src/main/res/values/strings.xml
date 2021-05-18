@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">TextAdventureGame</string>
     <string name="about">About</string>
     <string name="load">Load</string>
@@ -10,4 +10,17 @@
     <string name="sale_e_sablias">Sale e Sablia</string>
     <string name="next">Next</string>
     <string name="exit">Exit</string>
+    <string name="sale_e_sablia_the_fall_of_vanoe">Sale e Sablia The Fall of Vanoe</string>
+    <string name="todo" tools:ignore="DuplicateDefinition">TODO</string>
+    <string name="west">West</string>
+    <string name="east">East</string>
+    <string name="room">Room</string>
+    <string name="player">Player</string>
+    <string name="description">Description</string>
+    <string name="north">North</string>
+    <string name="south">South</string>
+    <string name="pickup">pickup</string>
+    <string name="save">Save</string>
+    <string name="drop">Drop</string>
+    <string name="image" />
 </resources>

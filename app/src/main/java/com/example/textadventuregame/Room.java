@@ -9,6 +9,7 @@ public class Room {
     private int south;
     private int west;
     private String description;
+    private String inventory;
 
     Room()
     {
@@ -17,6 +18,7 @@ public class Room {
         south = NO_EXIT;
         west = NO_EXIT;
         description = "NOTHING";
+        inventory = Player.NOTHING;
     }
 
     public int getNorth() {
@@ -57,5 +59,13 @@ public class Room {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(String inventory) {
+        this.inventory = inventory;
     }
 }
