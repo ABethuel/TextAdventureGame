@@ -122,6 +122,7 @@ public class PlayActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 finish();
+                System.exit(0);
             }
         });
 
@@ -137,33 +138,10 @@ public class PlayActivity extends AppCompatActivity {
 
     private void showDirections(int playerPos) {
         // Define if we can move or not in each room
-        if (thedungeon[playerPos].getNorth() == Room.NO_EXIT){
-            northButton.setEnabled(false);
-        }
-        else{
-            northButton.setEnabled(true);
-        }
-
-        if (thedungeon[playerPos].getEast() == Room.NO_EXIT){
-            eastButton.setEnabled(false);
-        }
-        else {
-            eastButton.setEnabled(true);
-        }
-
-        if (thedungeon[playerPos].getSouth() == Room.NO_EXIT){
-            southButton.setEnabled(false);
-        }
-        else {
-            southButton.setEnabled(true);
-        }
-
-        if (thedungeon[playerPos].getWest() == Room.NO_EXIT){
-            westButton.setEnabled(false);
-        }
-        else {
-            westButton.setEnabled(true);
-        }
+        northButton.setEnabled(thedungeon[playerPos].getNorth() != Room.NO_EXIT);
+        eastButton.setEnabled(thedungeon[playerPos].getEast() != Room.NO_EXIT);
+        southButton.setEnabled(thedungeon[playerPos].getSouth() != Room.NO_EXIT);
+        westButton.setEnabled(thedungeon[playerPos].getWest() != Room.NO_EXIT);
 
     } // private void showDirections()
 
