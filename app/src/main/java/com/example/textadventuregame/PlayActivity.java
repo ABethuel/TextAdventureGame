@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.res.XmlResourceParser;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -15,6 +18,15 @@ public class PlayActivity extends AppCompatActivity {
 
     static final int NUM_OF_ROOMS = 10; // Setup the number of rooms of the app
     Room [] thedungeon;
+    Player player; //player object
+
+    // Items
+    Button northButton, eastButton, southButton, westButton;
+    Button pickupButton, dropButton;
+    Button exitButton, saveButton;
+
+    TextView txtRoomDescription;
+    TextView txtPlayerInventory, txtRoomInventory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,11 +34,139 @@ public class PlayActivity extends AppCompatActivity {
         setContentView(R.layout.activity_play);
 
         initDungeon();
-        displayRooms();
-
         readXMLFile();
         displayRooms();
-    } // protected void onCreate
+
+        setupControls();
+
+        thedungeon[0].setInventory("Sword");
+
+        player = new Player();
+
+        txtRoomDescription.setText(thedungeon[player.getPlayerPos()].getDescription());
+        showDirections(player.getPlayerPos());
+
+        txtRoomInventory.setText(thedungeon[player.getPlayerPos()].getInventory());
+        txtPlayerInventory.setText(player.getInventory());
+
+    } // protected void onCreate()
+
+    private void setupControls() {
+        txtRoomDescription = findViewById(R.id.txtRoomDescription);
+        txtRoomInventory = findViewById(R.id.txtViewRoomInventory);
+        txtPlayerInventory = findViewById(R.id.txtViewPlayerInventory);
+
+        // Setup button (navigation, updating...)
+        northButton = findViewById(R.id.buttonNorth);
+        northButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                player.setPlayerPos(thedungeon[player.getPlayerPos()].getNorth());
+                updateRoomInformation();
+            }
+        });
+
+        eastButton = findViewById(R.id.btnEast);
+        eastButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                player.setPlayerPos(thedungeon[player.getPlayerPos()].getEast());
+                updateRoomInformation();
+            }
+        });
+
+        southButton = findViewById(R.id.btnSouth);
+        southButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                player.setPlayerPos(thedungeon[player.getPlayerPos()].getSouth());
+                updateRoomInformation();
+            }
+        });
+
+        westButton = findViewById(R.id.btnWest);
+        westButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                player.setPlayerPos(thedungeon[player.getPlayerPos()].getWest());
+                updateRoomInformation();
+            }
+        });
+
+        pickupButton = findViewById(R.id.buttonPickup);
+        pickupButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        dropButton = findViewById(R.id.buttonDrop);
+        dropButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        saveButton = findViewById(R.id.buttonSave);
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        exitButton = findViewById(R.id.btnExit);
+        exitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+    } // private void setupControls
+
+    private void updateRoomInformation() {
+        txtRoomDescription.setText(thedungeon[player.getPlayerPos()].getDescription());
+        showDirections(player.getPlayerPos());
+
+        txtRoomInventory.setText(thedungeon[player.getPlayerPos()].getInventory());
+        txtPlayerInventory.setText(player.getInventory());
+    } // private void updateRoomInformation
+
+    private void showDirections(int playerPos) {
+        // Define if we can move or not in each room
+        if (thedungeon[playerPos].getNorth() == Room.NO_EXIT){
+            northButton.setEnabled(false);
+        }
+        else{
+            northButton.setEnabled(true);
+        }
+
+        if (thedungeon[playerPos].getEast() == Room.NO_EXIT){
+            eastButton.setEnabled(false);
+        }
+        else {
+            eastButton.setEnabled(true);
+        }
+
+        if (thedungeon[playerPos].getSouth() == Room.NO_EXIT){
+            southButton.setEnabled(false);
+        }
+        else {
+            southButton.setEnabled(true);
+        }
+
+        if (thedungeon[playerPos].getWest() == Room.NO_EXIT){
+            westButton.setEnabled(false);
+        }
+        else {
+            westButton.setEnabled(true);
+        }
+
+    } // private void showDirections()
+
 
     protected void initDungeon() {
         thedungeon = new Room[NUM_OF_ROOMS];
