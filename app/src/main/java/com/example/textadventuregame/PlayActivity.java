@@ -106,6 +106,8 @@ public class PlayActivity extends AppCompatActivity {
 
                     txtRoomInventory.setText(thedungeon[player.getPlayerPos()].getInventory());
                     txtPlayerInventory.setText(player.getInventory());
+
+                    enabledInventory();
                 }
             }
         });
@@ -120,6 +122,8 @@ public class PlayActivity extends AppCompatActivity {
 
                     txtRoomInventory.setText(thedungeon[player.getPlayerPos()].getInventory());
                     txtPlayerInventory.setText(player.getInventory());
+
+                    enabledInventory();
                 }
             }
         });
@@ -160,15 +164,10 @@ public class PlayActivity extends AppCompatActivity {
 
     } // private void showDirections()
 
-
     private void enabledInventory() {
-        if (player.getInventory().equals(Player.NOTHING)){
-            dropButton.setEnabled(false);
-        }
-        if (thedungeon[player.getPlayerPos()].getInventory().equals(Player.NOTHING)){
-            pickupButton.setEnabled(false);
-        }
-    }
+        dropButton.setEnabled(!player.getInventory().equals(Player.NOTHING));
+        pickupButton.setEnabled(!thedungeon[player.getPlayerPos()].getInventory().equals(Player.NOTHING));
+    } // private void enabledInventory()
 
     protected void initDungeon() {
         thedungeon = new Room[NUM_OF_ROOMS];
