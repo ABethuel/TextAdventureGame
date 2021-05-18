@@ -11,7 +11,6 @@
     <string name="next">Next</string>
     <string name="exit">Exit</string>
     <string name="sale_e_sablia_the_fall_of_vanoe">Sale e Sablia The Fall of Vanoe</string>
-    <string name="todo" tools:ignore="DuplicateDefinition">TODO</string>
     <string name="west">West</string>
     <string name="east">East</string>
     <string name="room">Room</string>
