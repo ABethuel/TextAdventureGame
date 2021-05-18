@@ -2,6 +2,7 @@ package com.example.textadventuregame;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.res.XmlResourceParser;
 import android.os.Bundle;
 import android.util.Log;
@@ -48,6 +49,8 @@ public class PlayActivity extends AppCompatActivity {
 
         txtRoomInventory.setText(thedungeon[player.getPlayerPos()].getInventory());
         txtPlayerInventory.setText(player.getInventory());
+
+        enabledInventory();
 
     } // protected void onCreate()
 
@@ -97,7 +100,13 @@ public class PlayActivity extends AppCompatActivity {
         pickupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if ((!thedungeon[player.getPlayerPos()].getInventory().equals(Player.NOTHING)) && (player.getInventory().equals(Player.NOTHING))) {
+                    player.setInventory(thedungeon[player.getPlayerPos()].getInventory());
+                    thedungeon[player.getPlayerPos()].setInventory(Player.NOTHING);
 
+                    txtRoomInventory.setText(thedungeon[player.getPlayerPos()].getInventory());
+                    txtPlayerInventory.setText(player.getInventory());
+                }
             }
         });
 
@@ -105,7 +114,13 @@ public class PlayActivity extends AppCompatActivity {
         dropButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if ((thedungeon[player.getPlayerPos()].getInventory().equals(Player.NOTHING)) && (!player.getInventory().equals(Player.NOTHING))){
+                    thedungeon[player.getPlayerPos()].setInventory(player.getInventory());
+                    player.setInventory(Player.NOTHING);
 
+                    txtRoomInventory.setText(thedungeon[player.getPlayerPos()].getInventory());
+                    txtPlayerInventory.setText(player.getInventory());
+                }
             }
         });
 
@@ -121,8 +136,8 @@ public class PlayActivity extends AppCompatActivity {
         exitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
-                System.exit(0);
+                Intent intent = new Intent(getBaseContext(), MainActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -145,6 +160,15 @@ public class PlayActivity extends AppCompatActivity {
 
     } // private void showDirections()
 
+
+    private void enabledInventory() {
+        if (player.getInventory().equals(Player.NOTHING)){
+            dropButton.setEnabled(false);
+        }
+        if (thedungeon[player.getPlayerPos()].getInventory().equals(Player.NOTHING)){
+            pickupButton.setEnabled(false);
+        }
+    }
 
     protected void initDungeon() {
         thedungeon = new Room[NUM_OF_ROOMS];
