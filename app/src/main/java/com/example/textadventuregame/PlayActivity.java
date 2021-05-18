@@ -3,12 +3,14 @@ package com.example.textadventuregame;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.XmlResourceParser;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -16,6 +18,11 @@ import org.xmlpull.v1.XmlPullParserException;
 import java.io.IOException;
 
 public class PlayActivity extends AppCompatActivity {
+
+    //PLaying and saving information
+    static final String SAVEFILE = "savedgame";
+    static final String PLAYERPOS = "playerpos";
+    static final String KEY = "pos";
 
     static final int NUM_OF_ROOMS = 10; // Setup the number of rooms of the app
     Room [] thedungeon;
@@ -34,6 +41,10 @@ public class PlayActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play);
 
+        //Setting up our shared preference and bundle
+        Bundle bundle = getIntent().getExtras();
+        String playerPosStr = bundle.getString(PlayActivity.KEY);
+
         initDungeon();
         readXMLFile();
         displayRooms();
@@ -41,8 +52,7 @@ public class PlayActivity extends AppCompatActivity {
         setupControls();
 
         thedungeon[0].setInventory("Sword");
-
-        player = new Player();
+        player = new Player(Integer.parseInt(playerPosStr));
 
         txtRoomDescription.setText(thedungeon[player.getPlayerPos()].getDescription());
         showDirections(player.getPlayerPos());
@@ -132,6 +142,13 @@ public class PlayActivity extends AppCompatActivity {
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                SharedPreferences sharedPrefs = getSharedPreferences(SAVEFILE, MODE_PRIVATE);
+                SharedPreferences.Editor edit = sharedPrefs.edit();
+
+                edit.putInt(PLAYERPOS, player.getPlayerPos());
+                edit.commit();
+
+                Toast.makeText(getApplicationContext(), "Game Saved", Toast.LENGTH_LONG).show();
 
             }
         });

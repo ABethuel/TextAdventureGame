@@ -27,6 +27,7 @@ public class StartActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getBaseContext(), PlayActivity.class);
+                intent.putExtra(PlayActivity.KEY, "0");
                 startActivity(intent);
             }
         });

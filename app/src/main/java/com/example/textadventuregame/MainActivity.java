@@ -3,6 +3,7 @@ package com.example.textadventuregame;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
@@ -50,6 +51,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getBaseContext(), StartActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        loadButton = findViewById(R.id.buttonLoad);
+        loadButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getBaseContext(), PlayActivity.class);
+                SharedPreferences sharPrefs = getSharedPreferences(PlayActivity.SAVEFILE, MODE_PRIVATE);
+
+                int playerpos = sharPrefs.getInt(PlayActivity.PLAYERPOS, 0);
+
+                intent.putExtra(PlayActivity.KEY, Integer.toString(playerpos));
                 startActivity(intent);
             }
         });
