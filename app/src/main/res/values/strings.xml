@@ -22,4 +22,7 @@
     <string name="save">Save</string>
     <string name="drop">Drop</string>
     <string name="image" />
+    <string name="show_winner">VS</string>
+    <string name="king_won">The King won the round</string>
+    <string name="user_won">You won the round</string>
 </resources>

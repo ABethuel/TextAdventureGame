@@ -2,6 +2,7 @@ package com.example.textadventuregame;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -15,7 +16,8 @@ public class FightActivity extends AppCompatActivity {
 
     //Items
     TextView txtLifeEnnemy;
-    TextView textLifePlayer;
+    TextView txtLifePlayer;
+    TextView txtShowWinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,11 +26,13 @@ public class FightActivity extends AppCompatActivity {
 
         setupControls();
 
-        lifeEnnemy = 5;
+        lifeEnnemy = 3;
         txtLifeEnnemy.setText(String.valueOf(lifeEnnemy));
+        txtLifePlayer.setText(String.valueOf(player.getLife()));
     }
 
     private void setupControls() {
         txtLifeEnnemy = findViewById(R.id.txtLifeEnnemy);
+        txtLifePlayer = findViewById(R.id.txtLifePlayer);
     }
 }
