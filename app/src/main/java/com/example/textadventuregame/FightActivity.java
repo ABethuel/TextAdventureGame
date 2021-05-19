@@ -11,8 +11,8 @@ public class FightActivity extends AppCompatActivity {
     private int rollPlayer;
     private int rollEnnemy;
 
-    Player player;
     private int lifeEnnemy;
+    private int lifePlayer;
 
     //Items
     TextView txtLifeEnnemy;
@@ -27,8 +27,9 @@ public class FightActivity extends AppCompatActivity {
         setupControls();
 
         lifeEnnemy = 3;
+        lifePlayer = 3;
         txtLifeEnnemy.setText(String.valueOf(lifeEnnemy));
-        txtLifePlayer.setText(String.valueOf(player.getLife()));
+        txtLifePlayer.setText(String.valueOf(lifePlayer));
     }
 
     private void setupControls() {
