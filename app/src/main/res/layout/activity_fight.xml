@@ -22,8 +22,8 @@
         android:id="@+id/buttonHeavyAttack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginRight="28dp"
         android:layout_marginBottom="180dp"
         android:text="HEavy Attack"
         android:textSize="13sp"
@@ -35,14 +35,13 @@
         android:id="@+id/buttonShield"
         android:layout_width="136dp"
         android:layout_height="49dp"
+        android:layout_marginBottom="12dp"
         android:text="Shield"
         android:textSize="13sp"
         app:backgroundTint="#038CF4"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/imageView6"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.777" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView7"
