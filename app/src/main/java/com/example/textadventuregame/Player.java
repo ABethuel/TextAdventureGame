@@ -7,10 +7,12 @@ public class Player {
 
     private int playerPos;
     private String inventory;
+    private int life;
 
     Player()
     {
         playerPos = 0;
+        life = 3;
         inventory = NOTHING;
     }
 
@@ -33,5 +35,13 @@ public class Player {
 
     public void setInventory(String inventory){
         this.inventory = inventory;
+    }
+
+    public int getLife() {
+        return life;
+    }
+
+    public void setLife(int life) {
+        this.life = life;
     }
 }
