@@ -12,7 +12,7 @@ public class Player {
     Player()
     {
         playerPos = 0;
-        life = 3;
+        life = 5;
         inventory = NOTHING;
     }
 

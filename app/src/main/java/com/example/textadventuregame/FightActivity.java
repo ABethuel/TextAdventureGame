@@ -7,11 +7,11 @@ import android.widget.TextView;
 
 public class FightActivity extends AppCompatActivity {
 
-    private int rollPlayer = 0;
-    private int rollEnnemy = 0;
+    private int rollPlayer;
+    private int rollEnnemy;
 
     Player player;
-    private int lifeEnnemy = 5;
+    private int lifeEnnemy;
 
     //Items
     TextView txtLifeEnnemy;
@@ -22,6 +22,7 @@ public class FightActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fight);
 
-        txtLifeEnnemy.setText(lifeEnnemy);
+        lifeEnnemy = 5;
+        txtLifeEnnemy.setText(String.valueOf(lifeEnnemy));
     }
 }
