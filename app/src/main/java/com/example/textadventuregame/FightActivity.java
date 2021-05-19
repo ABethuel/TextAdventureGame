@@ -19,6 +19,8 @@ public class FightActivity extends AppCompatActivity {
     private int lifeEnemy;
     private int lifePlayer;
 
+    private int test;
+
     //Items
     TextView txtLifeEnemy;
     TextView txtLifePlayer;
@@ -122,7 +124,44 @@ public class FightActivity extends AppCompatActivity {
     } // private int enemyChoice()
 
     private void checkWin(){
+        // We check who win the round each time the player click the btn.
+        if (playerChoice == enemyChoice){
+            test = 0;
+        }
 
+        else if (playerChoice == Choice.LIGHT){
+            if (enemyChoice == Choice.HEAVY){
+                lifeEnemy -= 1;
+                txtLifeEnemy.setText(String.valueOf(lifeEnemy));
+            }
+            else if (enemyChoice == Choice.SHIELD){
+                lifePlayer -= 1;
+                txtLifePlayer.setText(String.valueOf(lifePlayer));
+            }
+        }
+
+        else if (playerChoice == Choice.SHIELD){
+            if (enemyChoice == Choice.LIGHT){
+                lifeEnemy -= 1;
+                txtLifeEnemy.setText(String.valueOf(lifeEnemy));
+            }
+            else if (enemyChoice == Choice.HEAVY){
+                lifePlayer -= 1;
+                txtLifePlayer.setText(String.valueOf(lifePlayer));
+            }
+        }
+
+        else if (playerChoice == Choice.HEAVY){
+            if (enemyChoice == Choice.SHIELD){
+                lifeEnemy -= 1;
+                txtLifePlayer.setText(String.valueOf(lifeEnemy));
+            }
+            else if (enemyChoice == Choice.LIGHT){
+                lifePlayer -= 1;
+                txtLifePlayer.setText(String.valueOf(lifePlayer));
+            }
+
+        }
     } // private void checkWin()
 
 }
