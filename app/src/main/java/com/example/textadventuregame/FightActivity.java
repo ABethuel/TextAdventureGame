@@ -22,7 +22,13 @@ public class FightActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fight);
 
+        setupControls();
+
         lifeEnnemy = 5;
         txtLifeEnnemy.setText(String.valueOf(lifeEnnemy));
+    }
+
+    private void setupControls() {
+        txtLifeEnnemy = findViewById(R.id.txtLifeEnnemy);
     }
 }
