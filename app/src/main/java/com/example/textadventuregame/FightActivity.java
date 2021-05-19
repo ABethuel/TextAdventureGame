@@ -3,6 +3,7 @@ package com.example.textadventuregame;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -154,14 +155,25 @@ public class FightActivity extends AppCompatActivity {
         else if (playerChoice == Choice.HEAVY){
             if (enemyChoice == Choice.SHIELD){
                 lifeEnemy -= 1;
-                txtLifePlayer.setText(String.valueOf(lifeEnemy));
+                txtLifeEnemy.setText(String.valueOf(lifeEnemy));
             }
             else if (enemyChoice == Choice.LIGHT){
                 lifePlayer -= 1;
                 txtLifePlayer.setText(String.valueOf(lifePlayer));
             }
-
         }
+        checkDeath();
     } // private void checkWin()
+
+    private void checkDeath() {
+        if (lifePlayer == 0){
+            Intent intent = new Intent(getBaseContext(), ActivityDeath.class);
+            startActivity(intent);
+        }
+        else if (lifeEnemy == 0){
+            Intent intent = new Intent(getBaseContext(), ActivityWin.class);
+            startActivity(intent);
+        }
+    } // private void checkDeath()
 
 }
