@@ -11,8 +11,11 @@
         android:layout_width="112dp"
         android:layout_height="113dp"
         android:visibility="invisible"
-        tools:layout_editor_absoluteX="184dp"
-        tools:layout_editor_absoluteY="195dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.264"
         tools:srcCompat="@tools:sample/avatars" />
 
     <Button
@@ -190,8 +193,10 @@
         android:layout_width="112dp"
         android:layout_height="113dp"
         android:visibility="invisible"
-        tools:layout_editor_absoluteX="184dp"
-        tools:layout_editor_absoluteY="371dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
