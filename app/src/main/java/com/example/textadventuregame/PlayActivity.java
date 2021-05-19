@@ -85,6 +85,11 @@ public class PlayActivity extends AppCompatActivity {
             public void onClick(View v) {
                 player.setPlayerPos(thedungeon[player.getPlayerPos()].getEast());
                 updateRoomInformation();
+
+                if (player.getPlayerPos() == 9){
+                    Intent intent = new Intent(getBaseContext(), FightActivity.class);
+                    startActivity(intent);
+                }
             }
         });
 
@@ -175,9 +180,15 @@ public class PlayActivity extends AppCompatActivity {
     private void showDirections(int playerPos) {
         // Define if we can move or not in each room
         northButton.setEnabled(thedungeon[playerPos].getNorth() != Room.NO_EXIT);
-        eastButton.setEnabled(thedungeon[playerPos].getEast() != Room.NO_EXIT);
-        southButton.setEnabled(thedungeon[playerPos].getSouth() != Room.NO_EXIT);
         westButton.setEnabled(thedungeon[playerPos].getWest() != Room.NO_EXIT);
+        southButton.setEnabled(thedungeon[playerPos].getSouth() != Room.NO_EXIT);
+
+        if (playerPos == 9){
+            eastButton.setEnabled(true);
+        }
+        else {
+            eastButton.setEnabled(thedungeon[playerPos].getEast() != Room.NO_EXIT);
+        }
 
     } // private void showDirections()
 
