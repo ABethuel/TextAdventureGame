@@ -76,6 +76,8 @@ public class PlayActivity extends AppCompatActivity {
             public void onClick(View v) {
                 player.setPlayerPos(thedungeon[player.getPlayerPos()].getNorth());
                 updateRoomInformation();
+
+                enabledInventory();
             }
         });
 
@@ -90,6 +92,8 @@ public class PlayActivity extends AppCompatActivity {
                     Intent intent = new Intent(getBaseContext(), FightActivity.class);
                     startActivity(intent);
                 }
+
+                enabledInventory();
             }
         });
 
@@ -99,6 +103,7 @@ public class PlayActivity extends AppCompatActivity {
             public void onClick(View v) {
                 player.setPlayerPos(thedungeon[player.getPlayerPos()].getSouth());
                 updateRoomInformation();
+                enabledInventory();
             }
         });
 
@@ -108,6 +113,7 @@ public class PlayActivity extends AppCompatActivity {
             public void onClick(View v) {
                 player.setPlayerPos(thedungeon[player.getPlayerPos()].getWest());
                 updateRoomInformation();
+                enabledInventory();
             }
         });
 
