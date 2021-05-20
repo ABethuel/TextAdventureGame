@@ -9,45 +9,65 @@
     >
 
     <Button
+        android:id="@+id/buttonFight"
+        android:layout_width="152dp"
+        android:layout_height="57dp"
+        android:text="Fight"
+        app:backgroundTint="#038CF4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.601" />
+
+    <Button
+        android:id="@+id/buttonPlay"
+        android:layout_width="152dp"
+        android:layout_height="57dp"
+        android:text="@string/play"
+        app:backgroundTint="#038CF4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.439" />
+
+    <Button
         android:id="@+id/buttonExit"
-        android:layout_width="105dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginLeft="35dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="34dp"
-        android:layout_marginRight="34dp"
-        android:layout_marginBottom="40dp"
+        android:layout_width="152dp"
+        android:layout_height="57dp"
         android:text="@string/exit"
         app:backgroundTint="#038CF4"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/buttonAbout"
-        app:layout_constraintStart_toEndOf="@+id/buttonHelp"
-        app:layout_constraintTop_toBottomOf="@+id/buttonLoad" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.683" />
 
     <Button
         android:id="@+id/buttonLoad"
-        android:layout_width="118dp"
+        android:layout_width="152dp"
         android:layout_height="57dp"
-        android:layout_marginEnd="96dp"
-        android:layout_marginRight="96dp"
-        android:layout_marginBottom="36dp"
         android:text="@string/load"
         app:backgroundTint="#038CF4"
-        app:layout_constraintBottom_toTopOf="@+id/buttonAbout"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.519" />
 
     <Button
         android:id="@+id/buttonAbout"
         android:layout_width="105dp"
         android:layout_height="46dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginRight="48dp"
-        android:layout_marginBottom="40dp"
         android:text="@string/about"
         app:backgroundTint="#038CF4"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.914"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.96" />
 
     <TextView
         android:id="@+id/textView"
@@ -69,24 +89,13 @@
         android:id="@+id/buttonHelp"
         android:layout_width="105dp"
         android:layout_height="46dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginBottom="40dp"
         android:text="@string/help"
         app:backgroundTint="#038CF4"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/buttonPlay"
-        android:layout_width="118dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="96dp"
-        android:layout_marginLeft="96dp"
-        android:layout_marginBottom="36dp"
-        android:text="@string/play"
-        app:backgroundTint="#038CF4"
-        app:layout_constraintBottom_toTopOf="@+id/buttonHelp"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.09"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.96" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

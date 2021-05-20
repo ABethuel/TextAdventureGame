@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         ring.setLooping(true); // We loop the music in all activities
         ring.start();
 
+
         // Navigation
         helpButton = findViewById(R.id.buttonHelp);
         helpButton.setOnClickListener(new View.OnClickListener() {
