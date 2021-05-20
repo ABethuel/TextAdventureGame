@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.XmlResourceParser;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -68,6 +69,10 @@ public class PlayActivity extends AppCompatActivity {
         txtRoomDescription = findViewById(R.id.txtRoomDescription);
         txtRoomInventory = findViewById(R.id.txtViewRoomInventory);
         txtPlayerInventory = findViewById(R.id.txtViewPlayerInventory);
+
+        MediaPlayer ring = MediaPlayer.create(PlayActivity.this, R.raw.rohirrim);
+        ring.setLooping(true); // We loop the music in all activities
+        ring.start();
 
         // Setup button (navigation, updating...)
         northButton = findViewById(R.id.btnNorth);
