@@ -22,6 +22,11 @@ public class StartActivity extends AppCompatActivity {
 
     private void setupControls() {
 
+        // Music
+        MediaPlayer ring = MediaPlayer.create(StartActivity.this, R.raw.ashesonthefire);
+        ring.setLooping(true); // We loop the music in all activities
+        ring.start();
+
         // Navigation
         nextButton = findViewById(R.id.buttonNext);
         nextButton.setOnClickListener(new View.OnClickListener() {
@@ -30,6 +35,8 @@ public class StartActivity extends AppCompatActivity {
                 Intent intent = new Intent(getBaseContext(), PlayActivity.class);
                 intent.putExtra(PlayActivity.KEY, "0");
                 startActivity(intent);
+
+                ring.stop();
             }
         });
 

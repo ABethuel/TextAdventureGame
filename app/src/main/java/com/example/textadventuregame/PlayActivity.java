@@ -97,7 +97,9 @@ public class PlayActivity extends AppCompatActivity {
                 if (player.getPlayerPos() == 9){
                     Intent intent = new Intent(getBaseContext(), FightActivity.class);
                     startActivity(intent);
-                    
+
+                    ring.stop();
+
                 }
 
                 enabledInventory();

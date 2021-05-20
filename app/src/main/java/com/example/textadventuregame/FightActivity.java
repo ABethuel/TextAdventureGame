@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -36,7 +37,7 @@ public class FightActivity extends AppCompatActivity {
 
     Random random;
 
-
+    MediaPlayer ring;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +53,12 @@ public class FightActivity extends AppCompatActivity {
     }
 
     private void setupControls() {
+
+        // Music
+        ring = MediaPlayer.create(FightActivity.this, R.raw.battle);
+        ring.setLooping(true); // We loop the music
+        ring.start();
+
         txtLifeEnemy = findViewById(R.id.txtLifeEnnemy);
         txtLifePlayer = findViewById(R.id.txtLifePlayer);
 
@@ -169,10 +176,12 @@ public class FightActivity extends AppCompatActivity {
         if (lifePlayer == 0){
             Intent intent = new Intent(getBaseContext(), ActivityDeath.class);
             startActivity(intent);
+            ring.stop();
         }
         else if (lifeEnemy == 0){
             Intent intent = new Intent(getBaseContext(), ActivityWin.class);
             startActivity(intent);
+            ring.stop();
         }
     } // private void checkDeath()
 

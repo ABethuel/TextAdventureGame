@@ -17,9 +17,6 @@ public class MainActivity extends AppCompatActivity {
     Button playButton;
     Button loadButton;
 
-    MediaPlayer ring;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private void setupControls() {
 
         // Music
-        ring = MediaPlayer.create(MainActivity.this, R.raw.ashesonthefire);
+        MediaPlayer ring = MediaPlayer.create(MainActivity.this, R.raw.ashesonthefire);
         ring.setLooping(true); // We loop the music in all activities
         ring.start();
 
