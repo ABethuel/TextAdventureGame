@@ -4,34 +4,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FinalDeathActivity"
-    android:background="@drawable/ck3">
+    android:background="@drawable/revolution3"
+    tools:context=".FinalWinActivity">
 
     <Button
-        android:id="@+id/buttonBackToMenu"
+        android:id="@+id/buttonBAckToMenuW"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Back to Menu"
         app:backgroundTint="#2196F3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.951" />
+        app:layout_constraintVertical_bias="0.923" />
 
     <TextView
-        android:id="@+id/textView10"
-        android:layout_width="283dp"
-        android:layout_height="229dp"
-        android:background="#EFE2E2"
+        android:id="@+id/textView9"
+        android:layout_width="310dp"
+        android:layout_height="226dp"
+        android:background="#FFFFFF"
         android:gravity="center"
-        android:text="You are dead, and the revolution with you. There is no one left to free the
-people from the tyrannical oppression of the king.  Maintenant ce sera le règne du sang et de la mort.
-Now it will be the reign of blood and death. Why are you dead? You were our last and only hope!
-Poor of us, who are condemned for thousands of years to live in terror!"
+        android:text="The King is dead! You killed him! And with his death you have freed the people
+of Vanoe from tyranny and bloody rule. Now an era of prosperity and peace will begin, where men and
+women will live in freedom and sovereignty. Thank you Jacko for liberating us!"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.425"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

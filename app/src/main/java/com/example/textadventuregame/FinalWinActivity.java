@@ -7,28 +7,26 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class ActivityWin extends AppCompatActivity {
+public class FinalWinActivity extends AppCompatActivity {
 
-    Button nextButton;
+    Button backToMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_win);
+        setContentView(R.layout.activity_final_win);
 
         setupControls();
     }
 
     private void setupControls() {
-        nextButton = findViewById(R.id.buttonNextWin);
-        nextButton.setOnClickListener(new View.OnClickListener() {
+        backToMenu = findViewById(R.id.buttonBAckToMenuW);
+        backToMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getBaseContext(), FinalWinActivity.class);
+                Intent intent = new Intent(getBaseContext(), MainActivity.class);
                 startActivity(intent);
             }
         });
     }
-
-
 }

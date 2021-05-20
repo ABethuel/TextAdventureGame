@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TextAdventureGame">
-        <activity android:name=".FinalDeathActivity"></activity>
+        <activity android:name=".FinalWinActivity"></activity>
+        <activity android:name=".FinalDeathActivity" />
         <activity android:name=".ActivityDeath" />
         <activity android:name=".ActivityWin" />
         <activity android:name=".FightActivity" />
