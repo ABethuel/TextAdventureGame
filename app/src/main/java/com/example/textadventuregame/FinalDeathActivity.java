@@ -1,4 +1,4 @@
-package com.example.textadventuregame;
+  package com.example.textadventuregame;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,23 +7,23 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class ActivityDeath extends AppCompatActivity {
+public class FinalDeathActivity extends AppCompatActivity {
 
-    Button nextButton;
-
+    Button backToMenu;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_death);
+        setContentView(R.layout.activity_final_death);
+
         setupControls();
     }
 
     private void setupControls() {
-        nextButton = findViewById(R.id.nextDeathButton);
-        nextButton.setOnClickListener(new View.OnClickListener() {
+        backToMenu = findViewById(R.id.buttonBackToMenu);
+        backToMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent  = new Intent(getBaseContext(), FinalDeathActivity.class);
+                Intent intent = new Intent(getBaseContext(), MainActivity.class);
                 startActivity(intent);
             }
         });
