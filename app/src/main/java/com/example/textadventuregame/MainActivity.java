@@ -17,6 +17,9 @@ public class MainActivity extends AppCompatActivity {
     Button playButton;
     Button loadButton;
 
+    MediaPlayer ring;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +29,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupControls() {
+
+        // Music
+        ring = MediaPlayer.create(MainActivity.this, R.raw.ashesonthefire);
+        ring.setLooping(true); // We loop the music in all activities
+        ring.start();
 
         // Navigation
         helpButton = findViewById(R.id.buttonHelp);
@@ -52,6 +60,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getBaseContext(), StartActivity.class);
                 startActivity(intent);
+
+                ring.stop();
 
                 /*Intent intent = new Intent(getBaseContext(), FightActivity.class);
                 startActivity(intent);*/
@@ -80,9 +90,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Music
-        MediaPlayer ring = MediaPlayer.create(MainActivity.this, R.raw.ashesonthefire);
-        ring.setLooping(true); // We loop the music in all activities
-        ring.start(); 
+
     }
 }

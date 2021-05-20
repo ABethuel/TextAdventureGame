@@ -66,13 +66,14 @@ public class PlayActivity extends AppCompatActivity {
     } // protected void onCreate()
 
     private void setupControls() {
+        // Music
+        MediaPlayer ring = MediaPlayer.create(PlayActivity.this, R.raw.rohirrim);
+        ring.setLooping(true);
+        ring.start();
+
         txtRoomDescription = findViewById(R.id.txtRoomDescription);
         txtRoomInventory = findViewById(R.id.txtViewRoomInventory);
         txtPlayerInventory = findViewById(R.id.txtViewPlayerInventory);
-
-        MediaPlayer ring = MediaPlayer.create(PlayActivity.this, R.raw.rohirrim);
-        ring.setLooping(true); // We loop the music in all activities
-        ring.start();
 
         // Setup button (navigation, updating...)
         northButton = findViewById(R.id.btnNorth);
@@ -96,6 +97,7 @@ public class PlayActivity extends AppCompatActivity {
                 if (player.getPlayerPos() == 9){
                     Intent intent = new Intent(getBaseContext(), FightActivity.class);
                     startActivity(intent);
+                    
                 }
 
                 enabledInventory();
