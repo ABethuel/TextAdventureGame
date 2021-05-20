@@ -21,9 +21,11 @@ public class FinalDeathActivity extends AppCompatActivity {
 
     private void setupControls() {
         // Music
-        MediaPlayer ring = MediaPlayer.create(FinalDeathActivity.this, R.raw.death);
+        /*MediaPlayer ring = MediaPlayer.create(FinalDeathActivity.this, R.raw.death);
         ring.setLooping(true); // We loop the music
-        ring.start();
+        ring.start();*/
+
+        ActivityDeath death = new ActivityDeath();
 
         backToMenu = findViewById(R.id.buttonBackToMenu);
         backToMenu.setOnClickListener(new View.OnClickListener() {
@@ -31,7 +33,7 @@ public class FinalDeathActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getBaseContext(), MainActivity.class);
                 startActivity(intent);
-                ring.stop();
+                death.getRing().stop();
             }
         });
     }

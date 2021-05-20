@@ -11,6 +11,11 @@ import android.widget.Button;
 public class ActivityDeath extends AppCompatActivity {
 
     Button nextButton;
+    MediaPlayer ring;
+
+    public MediaPlayer getRing() {
+        return ring;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +27,7 @@ public class ActivityDeath extends AppCompatActivity {
     private void setupControls() {
 
         // Music
-        MediaPlayer ring = MediaPlayer.create(ActivityDeath.this, R.raw.death);
+        ring = MediaPlayer.create(ActivityDeath.this, R.raw.death);
         ring.setLooping(true); // We loop the music
         ring.start();
 
