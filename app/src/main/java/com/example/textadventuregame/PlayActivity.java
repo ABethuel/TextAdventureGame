@@ -207,7 +207,11 @@ public class PlayActivity extends AppCompatActivity {
         westButton.setEnabled(thedungeon[playerPos].getWest() != Room.NO_EXIT);
         southButton.setEnabled(thedungeon[playerPos].getSouth() != Room.NO_EXIT);
 
-        if (thedungeon[player.getPlayerPos()] == thedungeon[9]){
+
+        if (!player.getInventory().equals("Key") &&  thedungeon[player.getPlayerPos()] == thedungeon[0]){
+            eastButton.setEnabled(false);
+        }
+        else if (thedungeon[player.getPlayerPos()] == thedungeon[9]){
             eastButton.setEnabled(true);
             eastButton.setOnClickListener(new View.OnClickListener() {
                 @Override
