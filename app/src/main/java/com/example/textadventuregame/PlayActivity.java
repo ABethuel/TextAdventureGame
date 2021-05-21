@@ -37,6 +37,8 @@ public class PlayActivity extends AppCompatActivity {
     TextView txtRoomDescription;
     TextView txtPlayerInventory, txtRoomInventory;
 
+    MediaPlayer ring;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,7 +69,7 @@ public class PlayActivity extends AppCompatActivity {
 
     private void setupControls() {
         // Music
-        MediaPlayer ring = MediaPlayer.create(PlayActivity.this, R.raw.rohirrim);
+        ring = MediaPlayer.create(PlayActivity.this, R.raw.rohirrim);
         ring.setLooping(true);
         ring.start();
 
@@ -95,13 +97,13 @@ public class PlayActivity extends AppCompatActivity {
                 updateRoomInformation();
 
                 // if (player.getPlayerPos() == 9){
-                if (thedungeon[player.getPlayerPos()] == thedungeon[9]){
+                /*if (thedungeon[player.getPlayerPos()] == thedungeon[9]){
                     Intent intent = new Intent(getBaseContext(), FightActivity.class);
                     startActivity(intent);
 
                     ring.stop();
 
-                }
+                }*/
 
                 enabledInventory();
             }
@@ -200,9 +202,20 @@ public class PlayActivity extends AppCompatActivity {
         westButton.setEnabled(thedungeon[playerPos].getWest() != Room.NO_EXIT);
         southButton.setEnabled(thedungeon[playerPos].getSouth() != Room.NO_EXIT);
 
-        if (playerPos == 9){
+        /*if (playerPos == 9){
+            eastButton.setEnabled(true);*/
+        if (thedungeon[player.getPlayerPos()] == thedungeon[9]){
             eastButton.setEnabled(true);
+            eastButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(getBaseContext(), FightActivity.class);
+                    startActivity(intent);
+                    ring.stop();
+                }
+            });
         }
+
         else {
             eastButton.setEnabled(thedungeon[playerPos].getEast() != Room.NO_EXIT);
         }
