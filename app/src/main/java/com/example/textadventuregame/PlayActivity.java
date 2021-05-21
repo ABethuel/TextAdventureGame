@@ -36,13 +36,18 @@ public class PlayActivity extends AppCompatActivity {
     Button northButton, eastButton, southButton, westButton;
     Button pickupButton, dropButton;
     Button exitButton, saveButton;
+    Button backFromFight;
 
     ImageView roomImageView;
+    ImageView cardinalPointView;
 
+    TextView title;
     TextView txtRoomDescription;
-    TextView txtPlayerInventory, txtRoomInventory;
+    TextView txtPlayerInventory, txtRoomInventory, txtNameInventory, textNameRoom;
 
     MediaPlayer ring;
+
+    int fightSoldier = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -189,6 +194,45 @@ public class PlayActivity extends AppCompatActivity {
             }
         });
 
+        backFromFight = findViewById(R.id.buttonBackFight);
+        backFromFight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                title.setVisibility(View.VISIBLE);
+                txtPlayerInventory.setVisibility(View.VISIBLE);
+                txtRoomInventory.setVisibility(View.VISIBLE);
+                txtNameInventory.setVisibility(View.VISIBLE);
+                textNameRoom.setVisibility(View.VISIBLE);
+                txtRoomDescription.setVisibility(View.VISIBLE);
+
+                eastButton.setVisibility(View.VISIBLE);
+                eastButton.setEnabled(true);
+
+                westButton.setVisibility(View.VISIBLE);
+                westButton.setEnabled(true);
+
+                southButton.setVisibility(View.VISIBLE);
+                southButton.setEnabled(true);
+
+                northButton.setVisibility(View.VISIBLE);
+                northButton.setEnabled(true);
+
+                saveButton.setVisibility(View.VISIBLE);
+                saveButton.setEnabled(true);
+
+                exitButton.setVisibility(View.VISIBLE);
+                exitButton.setEnabled(true);
+
+                roomImageView.setVisibility(View.VISIBLE);
+                cardinalPointView.setVisibility(View.VISIBLE);
+                fightSoldier = 1;
+
+
+                backFromFight.setVisibility(View.INVISIBLE);
+                backFromFight.setEnabled(false);
+            }
+        });
+
     } // private void setupControls
 
 
@@ -233,6 +277,41 @@ public class PlayActivity extends AppCompatActivity {
         }
         else {
             eastButton.setEnabled(thedungeon[playerPos].getEast() != Room.NO_EXIT);
+        }
+
+        if (thedungeon[player.getPlayerPos()] == thedungeon[6] &&  fightSoldier == 0){
+            title.setVisibility(View.INVISIBLE);
+            txtPlayerInventory.setVisibility(View.INVISIBLE);
+            txtRoomInventory.setVisibility(View.INVISIBLE);
+            txtNameInventory.setVisibility(View.INVISIBLE);
+            textNameRoom.setVisibility(View.INVISIBLE);
+            txtRoomDescription.setVisibility(View.INVISIBLE);
+
+            eastButton.setVisibility(View.INVISIBLE);
+            eastButton.setEnabled(false);
+
+            westButton.setVisibility(View.INVISIBLE);
+            westButton.setEnabled(false);
+
+            southButton.setVisibility(View.INVISIBLE);
+            southButton.setEnabled(false);
+
+            northButton.setVisibility(View.INVISIBLE);
+            northButton.setEnabled(false);
+
+            saveButton.setVisibility(View.INVISIBLE);
+            saveButton.setEnabled(false);
+
+            exitButton.setVisibility(View.INVISIBLE);
+            exitButton.setEnabled(false);
+
+            roomImageView.setVisibility(View.INVISIBLE);
+            cardinalPointView.setVisibility(View.INVISIBLE);
+            fightSoldier = 1;
+
+
+            backFromFight.setVisibility(View.VISIBLE);
+            backFromFight.setEnabled(true);
         }
 
     } // private void showDirections()
