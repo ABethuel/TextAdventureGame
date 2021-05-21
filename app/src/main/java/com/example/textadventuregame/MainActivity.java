@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     Button exitButton;
     Button playButton;
     Button loadButton;
+    Button fightButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,6 +78,17 @@ public class MainActivity extends AppCompatActivity {
 
                 intent.putExtra(PlayActivity.KEY, Integer.toString(playerpos));
                 startActivity(intent);
+            }
+        });
+
+        fightButton = findViewById(R.id.buttonFight);
+        fightButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getBaseContext(), FightActivity.class);
+                startActivity(intent);
+
+                ring.stop();
             }
         });
 

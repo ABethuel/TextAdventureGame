@@ -94,7 +94,8 @@ public class PlayActivity extends AppCompatActivity {
                 player.setPlayerPos(thedungeon[player.getPlayerPos()].getEast());
                 updateRoomInformation();
 
-                if (player.getPlayerPos() == 9){
+                // if (player.getPlayerPos() == 9){
+                if (thedungeon[player.getPlayerPos()] == thedungeon[9]){
                     Intent intent = new Intent(getBaseContext(), FightActivity.class);
                     startActivity(intent);
 
