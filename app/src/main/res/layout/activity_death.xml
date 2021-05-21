@@ -8,7 +8,7 @@
     tools:context=".ActivityDeath">
 
     <pl.droidsonroids.gif.GifImageView
-        android:id="@+id/gifImageView"
+        android:id="@+id/gifKnight"
         android:layout_width="439dp"
         android:layout_height="415dp"
         android:src="@drawable/revolution_gif"

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.XmlResourceParser;
+import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,6 +19,9 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
+import java.util.Random;
+
+import pl.droidsonroids.gif.GifImageView;
 
 public class PlayActivity extends AppCompatActivity {
 
@@ -37,17 +41,30 @@ public class PlayActivity extends AppCompatActivity {
     Button pickupButton, dropButton;
     Button exitButton, saveButton;
     Button backFromFight;
+    Button attackButton;
 
     ImageView roomImageView;
     ImageView cardinalPointView;
+    GifImageView knightGif;
 
     TextView title;
     TextView txtRoomDescription;
     TextView txtPlayerInventory, txtRoomInventory, txtNameInventory, textNameRoom;
 
+    View ScreenView;
+
     MediaPlayer ring;
 
     int fightSoldier = 0;
+    private int lifePlayer = 3;
+    private int lifeSoldier = 3;
+
+    enum Choice {NONE, LIGHT, HEAVY};
+    Choice playerChoice = Choice.NONE;
+    Choice knightChoice = Choice.NONE;
+
+    Random randomPlayer;
+    Random randomKnight;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,9 +108,12 @@ public class PlayActivity extends AppCompatActivity {
         title = findViewById(R.id.txtViewTitle);
         txtNameInventory = findViewById(R.id.txtViewnameinventory);
         textNameRoom = findViewById(R.id.txtViewNameRoom);
-        
+
         roomImageView = findViewById(R.id.imageViewRoom);
         cardinalPointView = findViewById(R.id.imageViewCardinalPoint);
+        knightGif = findViewById(R.id.gifKnight);
+
+        ScreenView = findViewById(R.id.activityPlay);
 
         // Setup button (navigation, updating...)
         northButton = findViewById(R.id.btnNorth);
@@ -228,13 +248,25 @@ public class PlayActivity extends AppCompatActivity {
                 exitButton.setVisibility(View.VISIBLE);
                 exitButton.setEnabled(true);
 
+                dropButton.setVisibility(View.VISIBLE);
+                dropButton.setEnabled(true);
+
+                pickupButton.setVisibility(View.VISIBLE);
+                pickupButton.setEnabled(true);
+
                 roomImageView.setVisibility(View.VISIBLE);
                 cardinalPointView.setVisibility(View.VISIBLE);
-                fightSoldier = 1;
 
+                ScreenView.setBackgroundColor(Color.WHITE);
+                fightSoldier = 1;
 
                 backFromFight.setVisibility(View.INVISIBLE);
                 backFromFight.setEnabled(false);
+
+                attackButton.setVisibility(View.INVISIBLE);
+                attackButton.setEnabled(false);
+
+                knightGif.setVisibility(View.INVISIBLE);
             }
         });
 
@@ -285,6 +317,8 @@ public class PlayActivity extends AppCompatActivity {
         }
 
         if (thedungeon[player.getPlayerPos()] == thedungeon[6] &&  fightSoldier == 0){
+            ScreenView.setBackgroundColor(Color.BLACK);
+
             title.setVisibility(View.INVISIBLE);
             txtPlayerInventory.setVisibility(View.INVISIBLE);
             txtRoomInventory.setVisibility(View.INVISIBLE);
@@ -310,14 +344,34 @@ public class PlayActivity extends AppCompatActivity {
             exitButton.setVisibility(View.INVISIBLE);
             exitButton.setEnabled(false);
 
+            dropButton.setVisibility(View.INVISIBLE);
+            dropButton.setEnabled(false);
+
+            pickupButton.setVisibility(View.INVISIBLE);
+            pickupButton.setEnabled(false);
+
             roomImageView.setVisibility(View.INVISIBLE);
             cardinalPointView.setVisibility(View.INVISIBLE);
 
-            backFromFight.setVisibility(View.VISIBLE);
-            backFromFight.setEnabled(true);
+            attackButton.setVisibility(View.VISIBLE);
+            attackButton.setEnabled(true);
+
+            knightGif.setVisibility(View.VISIBLE);
         }
 
     } // private void showDirections()
+
+    private int generateRandomNumberKnight() {
+        // We define a random number
+        randomKnight = new Random();
+        return randomKnight.nextInt(2);
+    } // private int generateRandomNumberKnight()
+
+    private int generateRandomNumberPlayer() {
+        randomPlayer = new Random();
+        return randomPlayer.nextInt(3);
+        
+    }
 
     private void enabledInventory() {
         dropButton.setEnabled(!player.getInventory().equals(Player.NOTHING));
@@ -419,4 +473,5 @@ public class PlayActivity extends AppCompatActivity {
 
         }
     } // public void readXMLFile
+
 } // public class PlayActivity
