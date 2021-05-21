@@ -133,8 +133,10 @@ public class PlayActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if ((!thedungeon[player.getPlayerPos()].getInventory().equals(Player.NOTHING)) ) {
-                    thedungeon[player.getPlayerPos()].setInventory(player.getInventory());
+
+                    String inventory = player.getInventory();
                     player.setInventory(thedungeon[player.getPlayerPos()].getInventory());
+                    thedungeon[player.getPlayerPos()].setInventory(inventory);
 
                     txtRoomInventory.setText(thedungeon[player.getPlayerPos()].getInventory());
                     txtPlayerInventory.setText(player.getInventory());
