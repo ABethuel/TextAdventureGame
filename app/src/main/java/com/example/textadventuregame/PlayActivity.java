@@ -90,8 +90,8 @@ public class PlayActivity extends AppCompatActivity {
         txtPlayerInventory = findViewById(R.id.txtViewPlayerInventory);
         title = findViewById(R.id.txtViewTitle);
         txtNameInventory = findViewById(R.id.txtViewnameinventory);
-        txtRoomInventory = findViewById(R.id.txtViewNameRoom);
-
+        textNameRoom = findViewById(R.id.txtViewNameRoom);
+        
         roomImageView = findViewById(R.id.imageViewRoom);
         cardinalPointView = findViewById(R.id.imageViewCardinalPoint);
 
