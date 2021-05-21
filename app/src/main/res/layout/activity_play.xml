@@ -8,19 +8,6 @@
     android:background="#FFFFFF"
     tools:context=".PlayActivity">
 
-    <pl.droidsonroids.gif.GifImageView
-        android:id="@+id/gifKnight"
-        android:layout_width="439dp"
-        android:layout_height="415dp"
-        android:src="@drawable/knight"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.048"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.25" />
-
     <Button
         android:id="@+id/btnExit"
         android:layout_width="wrap_content"
@@ -272,8 +259,21 @@
         android:layout_width="994dp"
         android:layout_height="1085dp"
         android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:srcCompat="@drawable/back_castle"
-        tools:layout_editor_absoluteX="-209dp"
-        tools:layout_editor_absoluteY="-115dp" />
+        tools:layout_editor_absoluteX="-272dp" />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gifKnight"
+        android:layout_width="439dp"
+        android:layout_height="415dp"
+        android:src="@drawable/knight"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.048"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
