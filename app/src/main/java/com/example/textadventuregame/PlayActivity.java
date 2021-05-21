@@ -137,6 +137,7 @@ public class PlayActivity extends AppCompatActivity {
                     txtPlayerInventory.setText(player.getInventory());
 
                     enabledInventory();
+                    updateRoomInformation();
                 }
             }
         });
@@ -153,6 +154,7 @@ public class PlayActivity extends AppCompatActivity {
                     txtPlayerInventory.setText(player.getInventory());
 
                     enabledInventory();
+                    updateRoomInformation();
                 }
             }
         });
@@ -207,9 +209,11 @@ public class PlayActivity extends AppCompatActivity {
         westButton.setEnabled(thedungeon[playerPos].getWest() != Room.NO_EXIT);
         southButton.setEnabled(thedungeon[playerPos].getSouth() != Room.NO_EXIT);
 
-
-        if (!player.getInventory().equals("Key") &&  thedungeon[player.getPlayerPos()] == thedungeon[0]){
+        if (!player.getInventory().equals("Key") && thedungeon[player.getPlayerPos()] == thedungeon[0]){
             eastButton.setEnabled(false);
+        }
+        else if (player.getInventory().equals("Key") && thedungeon[player.getPlayerPos()] == thedungeon[0]) {
+            eastButton.setEnabled(true);
         }
         else if (thedungeon[player.getPlayerPos()] == thedungeon[9]){
             eastButton.setEnabled(true);
