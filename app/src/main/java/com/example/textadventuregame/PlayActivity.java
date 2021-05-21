@@ -132,9 +132,9 @@ public class PlayActivity extends AppCompatActivity {
         pickupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if ((!thedungeon[player.getPlayerPos()].getInventory().equals(Player.NOTHING)) && (player.getInventory().equals(Player.NOTHING))) {
+                if ((!thedungeon[player.getPlayerPos()].getInventory().equals(Player.NOTHING)) ) {
+                    thedungeon[player.getPlayerPos()].setInventory(player.getInventory());
                     player.setInventory(thedungeon[player.getPlayerPos()].getInventory());
-                    thedungeon[player.getPlayerPos()].setInventory(Player.NOTHING);
 
                     txtRoomInventory.setText(thedungeon[player.getPlayerPos()].getInventory());
                     txtPlayerInventory.setText(player.getInventory());
