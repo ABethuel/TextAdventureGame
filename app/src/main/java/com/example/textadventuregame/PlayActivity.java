@@ -201,6 +201,7 @@ public class PlayActivity extends AppCompatActivity {
         txtPlayerInventory.setText(player.getInventory());
 
         updateRoomInformation();
+        setupDungeonImage();
     } // private void updateRoomInformation
 
     private void showDirections(int playerPos) {
