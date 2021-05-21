@@ -46,12 +46,11 @@ public class PlayActivity extends AppCompatActivity {
     ImageView roomImageView;
     ImageView cardinalPointView;
     GifImageView knightGif;
+    ImageView BackgroundImage;
 
     TextView title;
     TextView txtRoomDescription;
     TextView txtPlayerInventory, txtRoomInventory, txtNameInventory, textNameRoom;
-
-    View ScreenView;
 
     MediaPlayer ring;
 
@@ -113,7 +112,7 @@ public class PlayActivity extends AppCompatActivity {
         cardinalPointView = findViewById(R.id.imageViewCardinalPoint);
         knightGif = findViewById(R.id.gifKnight);
 
-        ScreenView = findViewById(R.id.activityPlay);
+        BackgroundImage = findViewById(R.id.imageBackgroundFight);
 
         // Setup button (navigation, updating...)
         northButton = findViewById(R.id.btnNorth);
@@ -257,7 +256,6 @@ public class PlayActivity extends AppCompatActivity {
                 roomImageView.setVisibility(View.VISIBLE);
                 cardinalPointView.setVisibility(View.VISIBLE);
 
-                ScreenView.setBackgroundColor(Color.WHITE);
                 fightSoldier = 1;
 
                 backFromFight.setVisibility(View.INVISIBLE);
@@ -267,6 +265,7 @@ public class PlayActivity extends AppCompatActivity {
                 attackButton.setEnabled(false);
 
                 knightGif.setVisibility(View.INVISIBLE);
+                BackgroundImage.setVisibility(View.INVISIBLE);
             }
         });
 
@@ -274,7 +273,7 @@ public class PlayActivity extends AppCompatActivity {
         attackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                
+
             }
         });
 
@@ -325,8 +324,6 @@ public class PlayActivity extends AppCompatActivity {
         }
 
         if (thedungeon[player.getPlayerPos()] == thedungeon[6] &&  fightSoldier == 0){
-            ScreenView.setBackgroundColor(Color.BLACK);
-
             title.setVisibility(View.INVISIBLE);
             txtPlayerInventory.setVisibility(View.INVISIBLE);
             txtRoomInventory.setVisibility(View.INVISIBLE);
@@ -365,6 +362,7 @@ public class PlayActivity extends AppCompatActivity {
             attackButton.setEnabled(true);
 
             knightGif.setVisibility(View.VISIBLE);
+            BackgroundImage.setVisibility(View.VISIBLE);
         }
 
     } // private void showDirections()

@@ -16,10 +16,10 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintHorizontal_bias="0.048"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.207" />
+        app:layout_constraintVertical_bias="0.25" />
 
     <Button
         android:id="@+id/btnExit"
@@ -266,4 +266,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.782" />
+
+    <ImageView
+        android:id="@+id/imageBackgroundFight"
+        android:layout_width="994dp"
+        android:layout_height="1085dp"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/back_castle"
+        tools:layout_editor_absoluteX="-209dp"
+        tools:layout_editor_absoluteY="-115dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
