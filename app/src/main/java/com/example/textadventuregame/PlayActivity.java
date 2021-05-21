@@ -69,6 +69,7 @@ public class PlayActivity extends AppCompatActivity {
         txtPlayerInventory.setText(player.getInventory());
 
         enabledInventory();
+        setupDungeonImage();
 
     } // protected void onCreate()
 
@@ -81,6 +82,7 @@ public class PlayActivity extends AppCompatActivity {
         txtRoomDescription = findViewById(R.id.txtRoomDescription);
         txtRoomInventory = findViewById(R.id.txtViewRoomInventory);
         txtPlayerInventory = findViewById(R.id.txtViewPlayerInventory);
+
 
         // Setup button (navigation, updating...)
         northButton = findViewById(R.id.btnNorth);
