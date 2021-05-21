@@ -46,11 +46,12 @@ public class PlayActivity extends AppCompatActivity {
     ImageView roomImageView;
     ImageView cardinalPointView;
     GifImageView knightGif;
-    ImageView BackgroundImage;
+    GifImageView victoryGif;
 
     TextView title;
     TextView txtRoomDescription;
     TextView txtPlayerInventory, txtRoomInventory, txtNameInventory, textNameRoom;
+    TextView titleFight;
 
     MediaPlayer ring;
 
@@ -111,8 +112,9 @@ public class PlayActivity extends AppCompatActivity {
         roomImageView = findViewById(R.id.imageViewRoom);
         cardinalPointView = findViewById(R.id.imageViewCardinalPoint);
         knightGif = findViewById(R.id.gifKnight);
+        victoryGif = findViewById(R.id.gifVictory);
 
-        BackgroundImage = findViewById(R.id.imageBackgroundFight);
+        titleFight = findViewById(R.id.txtViewTitleFight);
 
         // Setup button (navigation, updating...)
         northButton = findViewById(R.id.btnNorth);
@@ -265,7 +267,8 @@ public class PlayActivity extends AppCompatActivity {
                 attackButton.setEnabled(false);
 
                 knightGif.setVisibility(View.INVISIBLE);
-                BackgroundImage.setVisibility(View.INVISIBLE);
+                titleFight.setVisibility(View.INVISIBLE);
+                victoryGif.setVisibility(View.INVISIBLE);
             }
         });
 
@@ -273,7 +276,7 @@ public class PlayActivity extends AppCompatActivity {
         attackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                attack();
             }
         });
 
@@ -362,7 +365,7 @@ public class PlayActivity extends AppCompatActivity {
             attackButton.setEnabled(true);
 
             knightGif.setVisibility(View.VISIBLE);
-            BackgroundImage.setVisibility(View.VISIBLE);
+            titleFight.setVisibility(View.VISIBLE);
         }
 
     } // private void showDirections()
@@ -376,7 +379,22 @@ public class PlayActivity extends AppCompatActivity {
     private int generateRandomNumberPlayer() {
         randomPlayer = new Random();
         return randomPlayer.nextInt(3);
+    }
 
+    private void attack(){
+        if (player.getInventory().equals("Sword")){
+
+            attackButton.setVisibility(View.INVISIBLE);
+            attackButton.setEnabled(false);
+
+            knightGif.setVisibility(View.INVISIBLE);
+            titleFight.setVisibility(View.INVISIBLE);
+
+            victoryGif.setVisibility(View.VISIBLE);
+
+            backFromFight.setVisibility(View.VISIBLE);
+            backFromFight.setEnabled(true);
+        }
     }
 
     private void enabledInventory() {
