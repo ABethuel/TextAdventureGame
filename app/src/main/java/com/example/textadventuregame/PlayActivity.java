@@ -60,6 +60,7 @@ public class PlayActivity extends AppCompatActivity {
         setupControls();
 
         thedungeon[0].setInventory("Key");
+        thedungeon[2].setInventory("Sword");
         player = new Player(Integer.parseInt(playerPosStr));
 
         txtRoomDescription.setText(thedungeon[player.getPlayerPos()].getDescription());
