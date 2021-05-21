@@ -312,8 +312,6 @@ public class PlayActivity extends AppCompatActivity {
 
             roomImageView.setVisibility(View.INVISIBLE);
             cardinalPointView.setVisibility(View.INVISIBLE);
-            fightSoldier = 1;
-
 
             backFromFight.setVisibility(View.VISIBLE);
             backFromFight.setEnabled(true);
