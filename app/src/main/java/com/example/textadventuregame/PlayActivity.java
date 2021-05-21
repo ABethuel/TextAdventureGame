@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,6 +37,8 @@ public class PlayActivity extends AppCompatActivity {
     Button pickupButton, dropButton;
     Button exitButton, saveButton;
 
+    ImageView roomImageView;
+
     TextView txtRoomDescription;
     TextView txtPlayerInventory, txtRoomInventory;
 
@@ -53,6 +56,8 @@ public class PlayActivity extends AppCompatActivity {
         initDungeon();
         readXMLFile();
         displayRooms();
+
+        setupDungeonImage();
 
         setupControls();
 
@@ -166,7 +171,6 @@ public class PlayActivity extends AppCompatActivity {
                 edit.commit();
 
                 Toast.makeText(getApplicationContext(), "Game Saved", Toast.LENGTH_LONG).show();
-
             }
         });
 
@@ -182,12 +186,21 @@ public class PlayActivity extends AppCompatActivity {
 
     } // private void setupControls
 
+
+    protected void setupDungeonImage() {
+        roomImageView = findViewById(R.id.imageViewRoom);
+        int [] imageRoom = new int[]{R.drawable.room0, R.drawable.room1, R.drawable.room2, R.drawable.room3, R.drawable.room4,R.drawable.room5, R.drawable.room6, R.drawable.room7, R.drawable.room8, R.drawable.room9};
+        roomImageView.setImageResource(imageRoom[player.getPlayerPos()]);
+    } // protected void setupDungeonImage
+
     private void updateRoomInformation() {
         txtRoomDescription.setText(thedungeon[player.getPlayerPos()].getDescription());
         showDirections(player.getPlayerPos());
 
         txtRoomInventory.setText(thedungeon[player.getPlayerPos()].getInventory());
         txtPlayerInventory.setText(player.getInventory());
+
+        updateRoomInformation();
     } // private void updateRoomInformation
 
     private void showDirections(int playerPos) {
