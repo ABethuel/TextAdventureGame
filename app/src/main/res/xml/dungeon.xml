@@ -3,50 +3,51 @@
 <dungeon title="dungeon" author="Adrien">
     <room>
         <east>1</east>
-        <description>Room 1 (0)</description>
+        <description>You are in a cell of the Beast, find the key to escape </description>
+        <image></image>
     </room>
     <room>
         <west>0</west>
         <south>2</south>
-        <description>Room 2 (1)</description>
+        <description>You are out of the cell, but nothing is done. Find your way through the rooms and get out of the prison.</description>
     </room>
     <room>
         <north>1</north>
         <west>3</west>
         <east>4</east>
-        <description>Room 3 (2)</description>
+        <description>You are almost there, just a few more efforts!</description>
     </room>
     <room>
         <east>2</east>
-        <description>Room 4 (3)</description>
+        <description>It's a dead end!</description>
     </room>
     <room>
         <west>2</west>
         <north>5</north>
-        <description>Room 5 (4)</description>
+        <description>That's the door! Incredibly, there is no guard!</description>
     </room>
     <room>
         <south>4</south>
         <east>6</east>
-        <description>Room 6 (5)</description>
+        <description>The sea! All I have to do is swim to the shore.</description>
     </room>
     <room>
         <west>5</west>
         <north>7</north>
         <south>8</south>
-        <description>Room 7 (6)</description>
+        <description>The shores of the Upper Town, where the nobles live.</description>
     </room>
     <room>
         <south>6</south>
-        <description>Room 8 (7)</description>
+        <description>It's a dead end!</description>
     </room>
     <room>
         <north>6</north>
         <east>9</east>
-        <description>Room 9 (8)</description>
+        <description>The king's palace. It will be my only chance to free the people of Vanoe. </description>
     </room>
     <room>
         <west>8</west>
-        <description>Room 10 (9)</description>
+        <description>There is the Throne Room! I see the King!</description>
     </room>
 </dungeon>

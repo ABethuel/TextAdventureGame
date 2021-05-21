@@ -56,7 +56,7 @@ public class PlayActivity extends AppCompatActivity {
 
         setupControls();
 
-        thedungeon[0].setInventory("Sword");
+        thedungeon[0].setInventory("Key");
         player = new Player(Integer.parseInt(playerPosStr));
 
         txtRoomDescription.setText(thedungeon[player.getPlayerPos()].getDescription());
@@ -207,7 +207,6 @@ public class PlayActivity extends AppCompatActivity {
                 }
             });
         }
-
         else {
             eastButton.setEnabled(thedungeon[playerPos].getEast() != Room.NO_EXIT);
         }

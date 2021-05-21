@@ -13,10 +13,6 @@ public class ActivityDeath extends AppCompatActivity {
     Button nextButton;
     MediaPlayer ring;
 
-    public MediaPlayer getRing() {
-        return ring;
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
