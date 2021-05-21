@@ -88,7 +88,12 @@ public class PlayActivity extends AppCompatActivity {
         txtRoomDescription = findViewById(R.id.txtRoomDescription);
         txtRoomInventory = findViewById(R.id.txtViewRoomInventory);
         txtPlayerInventory = findViewById(R.id.txtViewPlayerInventory);
+        title = findViewById(R.id.txtViewTitle);
+        txtNameInventory = findViewById(R.id.txtViewnameinventory);
+        txtRoomInventory = findViewById(R.id.txtViewNameRoom);
 
+        roomImageView = findViewById(R.id.imageViewRoom);
+        cardinalPointView = findViewById(R.id.imageViewCardinalPoint);
 
         // Setup button (navigation, updating...)
         northButton = findViewById(R.id.btnNorth);
