@@ -23,6 +23,8 @@ public class PlayActivity extends AppCompatActivity {
     //PLaying and saving information
     static final String SAVEFILE = "savedgame";
     static final String PLAYERPOS = "playerpos";
+    static final String PLAYERINVENTORY = "playerinventory";
+    static final String ROOMINVENTORY = "roominventory";
     static final String KEY = "pos";
 
     static final int NUM_OF_ROOMS = 10; // Setup the number of rooms of the app
@@ -96,15 +98,6 @@ public class PlayActivity extends AppCompatActivity {
                 player.setPlayerPos(thedungeon[player.getPlayerPos()].getEast());
                 updateRoomInformation();
 
-                // if (player.getPlayerPos() == 9){
-                /*if (thedungeon[player.getPlayerPos()] == thedungeon[9]){
-                    Intent intent = new Intent(getBaseContext(), FightActivity.class);
-                    startActivity(intent);
-
-                    ring.stop();
-
-                }*/
-
                 enabledInventory();
             }
         });
@@ -169,6 +162,7 @@ public class PlayActivity extends AppCompatActivity {
                 SharedPreferences.Editor edit = sharedPrefs.edit();
 
                 edit.putInt(PLAYERPOS, player.getPlayerPos());
+                edit.putString(PLAYERINVENTORY, player.getInventory());
                 edit.commit();
 
                 Toast.makeText(getApplicationContext(), "Game Saved", Toast.LENGTH_LONG).show();
@@ -202,8 +196,6 @@ public class PlayActivity extends AppCompatActivity {
         westButton.setEnabled(thedungeon[playerPos].getWest() != Room.NO_EXIT);
         southButton.setEnabled(thedungeon[playerPos].getSouth() != Room.NO_EXIT);
 
-        /*if (playerPos == 9){
-            eastButton.setEnabled(true);*/
         if (thedungeon[player.getPlayerPos()] == thedungeon[9]){
             eastButton.setEnabled(true);
             eastButton.setOnClickListener(new View.OnClickListener() {
@@ -286,7 +278,6 @@ public class PlayActivity extends AppCompatActivity {
                         elemText = "description";
                     }
                 }
-                // We will add code there to read rooms
 
                 else if (eventType == XmlPullParser.TEXT){
                     switch (elemText) {
