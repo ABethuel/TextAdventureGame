@@ -57,8 +57,6 @@ public class PlayActivity extends AppCompatActivity {
         readXMLFile();
         displayRooms();
 
-        setupDungeonImage();
-
         setupControls();
 
         thedungeon[0].setInventory("Key");
@@ -200,7 +198,6 @@ public class PlayActivity extends AppCompatActivity {
         txtRoomInventory.setText(thedungeon[player.getPlayerPos()].getInventory());
         txtPlayerInventory.setText(player.getInventory());
 
-        updateRoomInformation();
         setupDungeonImage();
     } // private void updateRoomInformation
 
