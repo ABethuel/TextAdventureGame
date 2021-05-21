@@ -382,6 +382,9 @@ public class PlayActivity extends AppCompatActivity {
 
             PvKnightText.setVisibility(View.VISIBLE);
             LifeKnightText.setVisibility(View.VISIBLE);
+
+            PVPlayerText.setVisibility(View.VISIBLE);
+            LifePlayerText.setVisibility(View.VISIBLE);
         }
 
     } // private void showDirections()
@@ -405,6 +408,12 @@ public class PlayActivity extends AppCompatActivity {
 
             knightGif.setVisibility(View.INVISIBLE);
             titleFight.setVisibility(View.INVISIBLE);
+
+            PvKnightText.setVisibility(View.INVISIBLE);
+            LifeKnightText.setVisibility(View.INVISIBLE);
+
+            PVPlayerText.setVisibility(View.INVISIBLE);
+            LifePlayerText.setVisibility(View.INVISIBLE);
 
             victoryGif.setVisibility(View.VISIBLE);
 
@@ -451,6 +460,7 @@ public class PlayActivity extends AppCompatActivity {
         if (lifePlayer <= 0 ) {
             Intent intent = new Intent(getBaseContext(), DeathKnightActivity.class);
             startActivity(intent);
+            ring.stop();
         }
         else if (lifeSoldier <= 0){
 
@@ -459,6 +469,12 @@ public class PlayActivity extends AppCompatActivity {
 
             knightGif.setVisibility(View.INVISIBLE);
             titleFight.setVisibility(View.INVISIBLE);
+
+            PvKnightText.setVisibility(View.INVISIBLE);
+            LifeKnightText.setVisibility(View.INVISIBLE);
+
+            PVPlayerText.setVisibility(View.INVISIBLE);
+            LifePlayerText.setVisibility(View.INVISIBLE);
 
             victoryGif.setVisibility(View.VISIBLE);
 
