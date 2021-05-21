@@ -78,7 +78,6 @@ public class MainActivity extends AppCompatActivity {
                 String playerInventory = sharPrefs.getString(PlayActivity.PLAYERINVENTORY, Player.NOTHING);
 
                 intent.putExtra(PlayActivity.KEY, Integer.toString(playerpos));
-                intent.putExtra(PlayActivity.KEY, playerInventory);
                 startActivity(intent);
             }
         });
