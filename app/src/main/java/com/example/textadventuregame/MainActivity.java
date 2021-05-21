@@ -75,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
                 SharedPreferences sharPrefs = getSharedPreferences(PlayActivity.SAVEFILE, MODE_PRIVATE);
 
                 int playerpos = sharPrefs.getInt(PlayActivity.PLAYERPOS, 0);
+                String playerInventory = sharPrefs.getString(PlayActivity.PLAYERINVENTORY, Player.NOTHING);
 
                 intent.putExtra(PlayActivity.KEY, Integer.toString(playerpos));
                 startActivity(intent);
