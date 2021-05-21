@@ -52,6 +52,8 @@ public class PlayActivity extends AppCompatActivity {
     TextView txtRoomDescription;
     TextView txtPlayerInventory, txtRoomInventory, txtNameInventory, textNameRoom;
     TextView titleFight;
+    TextView PvKnightText, LifeKnightText;
+    TextView PVPlayerText, LifePlayerText;
 
     MediaPlayer ring;
 
@@ -108,6 +110,11 @@ public class PlayActivity extends AppCompatActivity {
         title = findViewById(R.id.txtViewTitle);
         txtNameInventory = findViewById(R.id.txtViewnameinventory);
         textNameRoom = findViewById(R.id.txtViewNameRoom);
+        PvKnightText = findViewById(R.id.txtPVKnight);
+        LifeKnightText = findViewById(R.id.txtLifeKnight);
+        PVPlayerText = findViewById(R.id.txtViewPVPlayer);
+        LifePlayerText = findViewById(R.id.txtLifePlayer2);
+
 
         roomImageView = findViewById(R.id.imageViewRoom);
         cardinalPointView = findViewById(R.id.imageViewCardinalPoint);
@@ -232,10 +239,8 @@ public class PlayActivity extends AppCompatActivity {
                 txtRoomDescription.setVisibility(View.VISIBLE);
 
                 eastButton.setVisibility(View.VISIBLE);
-                eastButton.setEnabled(true);
 
                 westButton.setVisibility(View.VISIBLE);
-                westButton.setEnabled(true);
 
                 southButton.setVisibility(View.VISIBLE);
                 southButton.setEnabled(true);
@@ -269,6 +274,12 @@ public class PlayActivity extends AppCompatActivity {
                 knightGif.setVisibility(View.INVISIBLE);
                 titleFight.setVisibility(View.INVISIBLE);
                 victoryGif.setVisibility(View.INVISIBLE);
+
+                PvKnightText.setVisibility(View.INVISIBLE);
+                LifeKnightText.setVisibility(View.INVISIBLE);
+                PVPlayerText.setVisibility(View.INVISIBLE);
+                LifePlayerText.setVisibility(View.INVISIBLE);
+
             }
         });
 
@@ -277,6 +288,8 @@ public class PlayActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 attack();
+                knightAttack();
+                checkWin();
             }
         });
 
@@ -366,6 +379,9 @@ public class PlayActivity extends AppCompatActivity {
 
             knightGif.setVisibility(View.VISIBLE);
             titleFight.setVisibility(View.VISIBLE);
+
+            PvKnightText.setVisibility(View.VISIBLE);
+            LifeKnightText.setVisibility(View.VISIBLE);
         }
 
     } // private void showDirections()
@@ -383,6 +399,60 @@ public class PlayActivity extends AppCompatActivity {
 
     private void attack(){
         if (player.getInventory().equals("Sword")){
+
+            attackButton.setVisibility(View.INVISIBLE);
+            attackButton.setEnabled(false);
+
+            knightGif.setVisibility(View.INVISIBLE);
+            titleFight.setVisibility(View.INVISIBLE);
+
+            victoryGif.setVisibility(View.VISIBLE);
+
+            backFromFight.setVisibility(View.VISIBLE);
+            backFromFight.setEnabled(true);
+
+
+        }
+        else {
+            int choice = 0;
+            choice = generateRandomNumberPlayer();
+            if (choice == 0){
+                LifeKnightText.setText(String.valueOf(lifeSoldier));
+                Toast.makeText(getApplicationContext(), "No Damage", Toast.LENGTH_LONG).show();
+            }
+            else if (choice == 1){
+                lifeSoldier -= 1;
+                LifeKnightText.setText(String.valueOf(lifeSoldier));
+                Toast.makeText(getApplicationContext(), "1PV Damage", Toast.LENGTH_LONG).show();
+            }
+            else if (choice == 2){
+                lifeSoldier -= 2;
+                LifeKnightText.setText(String.valueOf(lifeSoldier));
+                Toast.makeText(getApplicationContext(), "2PV Damage", Toast.LENGTH_LONG).show();
+            }
+        }
+    } // private void attack()
+
+    private void knightAttack(){
+        int choice = 0;
+        choice = generateRandomNumberKnight();
+
+        if (choice == 0){
+            lifePlayer -= 1;
+            LifePlayerText.setText(String.valueOf(lifePlayer));
+        }
+        else if (choice == 1) {
+            lifePlayer -= 2;
+            LifePlayerText.setText(String.valueOf(lifePlayer));
+        }
+    } // private void knightAttack()
+
+    private void checkWin(){
+        if (lifePlayer <= 0 ) {
+            Intent intent = new Intent(getBaseContext(), DeathKnightActivity.class);
+            startActivity(intent);
+        }
+        else if (lifeSoldier <= 0){
 
             attackButton.setVisibility(View.INVISIBLE);
             attackButton.setEnabled(false);
