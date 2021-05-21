@@ -270,6 +270,14 @@ public class PlayActivity extends AppCompatActivity {
             }
         });
 
+        attackButton = findViewById(R.id.attackButton);
+        attackButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                
+            }
+        });
+
     } // private void setupControls
 
 
@@ -370,7 +378,7 @@ public class PlayActivity extends AppCompatActivity {
     private int generateRandomNumberPlayer() {
         randomPlayer = new Random();
         return randomPlayer.nextInt(3);
-        
+
     }
 
     private void enabledInventory() {
