@@ -25,4 +25,5 @@
     <string name="show_winner">VS</string>
     <string name="king_won">The King won the round</string>
     <string name="user_won">You won the round</string>
+    <string name="imagedeath">imageDeath</string>
 </resources>
