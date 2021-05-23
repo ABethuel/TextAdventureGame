@@ -79,6 +79,8 @@ public class MainActivity extends AppCompatActivity {
 
                 intent.putExtra(PlayActivity.KEY, Integer.toString(playerpos));
                 startActivity(intent);
+
+                ring.stop();
             }
         });
 
